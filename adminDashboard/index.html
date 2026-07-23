@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset='UTF-8'>
+    <title>Sticky header and sidebar</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+
+        <header class='header'>
+
+            <div class='header-left'>
+                <div class='logo-div  side-by-side'>
+                    <span class='logo' id='humburger'>☰</span>
+                    <b>Gemikie</b>
+                </div>
+            </div>
+
+            <div class='header-center side-by-side'>
+                
+                <div id='searchbar' class='searchbar'>
+                    <input type='text' placeholder='Search'>
+                    <button class='search-button'>Search</button>
+                </div>
+            </div>
+
+            <div class='header-right'>
+                <div class='bell-div' id='toggleNotifications'>
+                    <p>64</p>
+                <span class='bell'>&#x1F514;&#xFE0E;</span>
+                </div>
+                <img src='frontendImages/john.jpeg' alt='Profile pic'>
+                <p class='user-role'>Admin John</p>
+            </div>
+            
+        </header>
+
+    <div class='main-container'>
+
+        <aside class='sidebar' id='sidebar'>
+
+            <div class='sidebar-buttons column-direction'>
+                <a href='#' class='side-by-side active-sidebar-btn' id='dashboardButton'>
+                    <span class='icon'>&#x2756;</span>
+                    <h3>Dashboard</h3>
+                </a>
+
+                <a href='#' class='side-by-side' id='pendingButton'>
+                    <span class='icon'>&#x23F3;&#xFE0E;</span>
+                    <h3>Pending</h3>
+                </a>
+
+                <a href='#' class='side-by-side'>
+                    <span class='icon'>&#x21C4;</span>
+                    <h3>Transactions</h3>
+                </a>
+
+                <a href='#' class='side-by-side'>
+                    <span class='icon'>&#x1F465;&#xFE0E;</span>
+                    <h3>Users</h3>
+                </a>
+
+                <a href='#' class='side-by-side'>
+                    <span class='icon'>&#x2709;</span>
+                    <h3>Messages</h3>
+                </a>
+
+                <a href='#' class='side-by-side'>
+                    <span class='icon'>&#x1F4C8;</span>
+                    <h3>Analytics</h3>
+                </a>
+
+                <a href='#' class='side-by-side'>
+                    <span class='icon'>&#x2699;</span>
+                    <h3>Settings</h3>
+                </a>
+
+                <a href='#' class='side-by-side'>
+                    <span class='icon' style='display: inline-block; transform: scaleX(-1); color: #f59e0b;'>&#x27B1;</span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+
+    <main class='main-middle'>
+        <div class='surface-wrapper show-tab' id='dashboard''>
+            <section class='middle-top'>
+
+                <div class='h-div'>
+                <h2>Today's Players</h2>
+                <div class='side-by-side'>
+                    <p class='balance' id='balance'>350</p>
+                    <b>Players</b>
+                </div>
+                    <div class='last-div side-by-side'>
+                        <small>Last 24 hours</small>
+                        <button>View full history</button>
+                    </div>
+                    </div>
+                
+                <div class='h-div'>
+                <h2>Main Balance</h2>
+                <div class='side-by-side'>
+                    <p class='balance' id='balance'>350,000</p>
+                    <b>UGX</b>
+                </div>
+                    </div>
+
+                <div class='h-div'>
+                <h2>Main Balance</h2>
+                <div class='side-by-side'>
+                    <p class='balance' id='balance'>350,000</p>
+                    <b>UGX</b>
+                </div>
+                    </div>
+
+                <div class='h-div'>
+                <h2>Main Balance</h2>
+                <div class='side-by-side'>
+                    <p class='balance' id='balance'>350,000</p>
+                   <b>UGX</b>
+                </div>
+                    </div>
+
+                <div class='h-div'>
+                <h2>Main Balance</h2>
+                <div class='side-by-side'>
+                    <p class='balance' id='balance'>350,000</p>
+                    <b>UGX</b>
+                </div>
+                    </div>
+                
+            </section>
+
+            <section class='middle-center'>
+                
+            </section>
+
+            <section class='middle-bottom'>
+                
+            </section>
+
+        </div>
+
+        <div id='pending' class='hide-tab'>
+        <div class='tabs-area'>
+            <h2>Pending Requests</h2>
+            <div class='tabs'>
+                <div class='tab' id='allReqs'>All</div>
+                <div class='tab' id='withdrawBtn'>Withdraws</div>
+                <div class='tab' id='depositsBtn'>Deposits</div>
+            </div>
+             </div>
+
+            <div class='table-container'>
+                <table id='pendingReqTable'>
+                    <thead>
+                        <tr class='table-row'>
+                            <th>No.</th>
+                            <th>User</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Phone</th>
+                            <th>Names</th>
+                            <th>Time</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class='table-body'>
+                        <td>1</td>
+                        <td>
+                            Jordan
+                        </td>
+                        <td>Withdraw</td>
+                        <td style='font-weight: bold'>5,000</td>
+                        <td>0748 339905</td>
+                        <td>Wadri Ponzio</td>
+                        <td>08:17</td>
+                        <td>
+                            <div class='action-buttons'>
+                                <button class='accept-btn'>Approve</button>
+                                <button class='reject-btn'>Reject</button>
+                            </div>
+                        </td>
+                    </tbody>
+
+                    <tbody class='table-body'>
+                        <td>2</td>
+                        <td>
+                            Jordan
+                        </td>
+                        <td>Deposit</td>
+                        <td>5,000</td>
+                        <td>0748 339905</td>
+                        <td>- - </td>
+                        <td>08:17</td>
+                        <td>
+                            <div class='action-buttons'>
+                                <button class='accept-btn'>Approve</button>
+                                <button class='reject-btn'>Reject</button>
+                            </div>
+                        </td>
+                    </tbody>
+                </table>
+            </div>
+
+        <div class='phone-table-container'>
+            
+            <div class='mobile-table deposits'>
+                <div class='box-1'>
+                <p class='req-type' id='reqType'>Deposit</p>
+                <p class='counter' id='reqCounter'>1</p>
+                </div>
+
+                <div class='row'>
+                    <p>User</p>
+                    <p>daniel01</p>
+                </div>
+                <div class='row'>
+                    <p>Amout</p>
+                    <p>12,000</p>
+                </div>
+                <div class='row'>
+                    <p>Phone</p>
+                    <p>0749 356 681</p>
+                </div>
+
+                <div class='row'>
+                    <p>Time</p>
+                    <p>06:10pm | 8 Jan 2027</p>
+                </div>
+                
+                 <div class='action-buttons'>
+                     <button class='accept-btn'>&#x2713; Approve</button>
+                    <button class='reject-btn'>&#x2717; Reject</button>
+                </div>
+            </div>
+
+            <div class='mobile-table withdraws'>
+                <div class='box-1'>
+                <p class='req-type' id='reqType'>Withdraw</p>
+                <span class='counter' id='reqCounter'>2</span>
+                </div>
+
+                <div class='row'>
+                    <p>User</p>
+                    <p>kevo980</p>
+                </div>
+
+                <div class='row'>
+                    <p>Amout</p>
+                    <p>9,000</p>
+                </div>
+                <div class='row'>
+                    <p>Phone</p>
+                    <p>0749 339 905</p>
+                </div>
+                <div class='row'>
+                    <p>Names</p>
+                    <p>Wadri Ponzio</p>
+                </div>
+                <div class='row'>
+                    <p>Time</p>
+                    <p>04:16am <span class='date'>6 Jan 2027</span></p>
+                </div>
+                
+                 <div class='action-buttons'>
+                     <button class='accept-btn'>&#x2713; Approve</button>
+                    <button class='reject-btn'>&#x2717; Reject</button>
+                </div>
+            </div>
+            
+        </div>
+            </div>
+            
+       
+    </main>
+        
+    <div class='main-right' id='notifications'>
+       <h1>Hey</h1> 
+    </div>
+        
+    </div>
+    
+    <script src='main.js'></script>
+</body>
