@@ -240,13 +240,14 @@ img {
 .sidebar .side-by-side h3 {
     margin-top: 4px;
     margin-left: 3px;
+    color: rgba(255,255,255,0.85)
 }
 
 .sidebar .side-by-side .icon {
      font-size: 1.3rem;
     color: rgba(255,255,255,0.6);
      /* border: 1px solid rgba(200, 200, 255, 1); */
-    width: 1.4rem;
+    width: 1.9rem;
     text-align: center;
 }
 
@@ -519,7 +520,11 @@ td .action-buttons .reject-btn {
 
     .sidebar {
         width-max: 50%;
-        transform: translateX(0);  
+        transform: translateX(0); 
+    }
+
+    .sidebar-buttons {
+        padding-top: 0.5rem;
     }
 
     #sidebar:not(.hidden){
@@ -562,6 +567,7 @@ td .action-buttons .reject-btn {
         gap: 1.5rem;
         padding: 0.5rem;
         align-items: center;
+        padding-bottom: 6rem;
     }
 
     .mobile-table {
@@ -602,7 +608,7 @@ td .action-buttons .reject-btn {
         font-weight: 700;
         flex: 1;
         background-color: var(--color-primary);
-        
+        border-radius: 0px  0px 0 20px;
     }
 
     .mobile-table .row {
