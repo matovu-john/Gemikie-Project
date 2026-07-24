@@ -1,6 +1,78 @@
 const humburger = document.getElementById('humburger');
 const sidebar = document.getElementById('sidebar');
 
+const fragment = document.createDocumentFragment();
+
+const PhoneTable = document.querySelector('.phone-table-container');
+const mobileTable = document.querySelector('.mobile-table');
+function createMobileTable(arr){
+   arr.forEach((prop, len) =>{
+      const div1 = document.createElement('div');
+       const div2 = document.createElement('div');
+       const div3 = document.createElement('div');
+       const div4 = document.createElement('div');
+       const div5 = document.createElement('div');
+       const div6 = document.createElement('div');
+       const div7 = document.createElement('div');
+       const div8 = document.createElement('div');
+       const p1 = document.createElement('p');
+       const p2 = document.createElement('p');
+       const p3 = document.createElement('p');
+       const p4 = document.createElement('p');
+       const p5 = document.createElement('p');
+       const p6 = document.createElement('p');
+       const p7 = document.createElement('p');
+       const p8 = document.createElement('p');
+       const p9 = document.createElement('p');
+       const p10 = document.createElement('p');
+       const p11 = document.createElement('p');
+       const p12 = document.createElement('p');
+       const button1 = document.createElement('button');
+       const button2 = document.createElement('button');
+
+       div1.classList.add('mobile-table', 'deposits');
+       div2.classList.add('box-1');
+       div3.classList.add('row');
+       div4.classList.add('row');
+       div5.classList.add('row');
+       div6.classList.add('row');
+       div8.classList.add('row');
+       div7.classList.add('action-buttons');
+       button1.classList.add('accept-btn');
+       button2.classList.add('reject-btn');
+       p1.classList.add('req-type');
+       p2.classList.add('counter');
+
+       p1.textContent = prop.type;
+       p2.textContent = len + 1;
+       console.log(len)
+       p3.textContent = 'User';
+       p4.textContent = prop.name;
+       p5.textContent = 'Amount';
+       p6.textContent = prop.amount;
+       p7.textContent = 'Phone';
+       p8.textContent = prop.tel;
+       p9.textContent = 'Time';
+       p10.textContent = prop.time;
+       p11.textContent = 'Names';
+       p12.textContent = prop.names;
+       button1.textContent = '\u{2713} Approve';
+       button2.textContent = '\u{2717} Reject';
+
+       div7.append(button1, button2);
+       div6.append(p9, p10);
+       div5.append(p7, p8);
+       div4.append(p5, p6);
+       div3.append(p3, p4);
+       div2.append(p1, p2);
+       div8.append(p11, p12);
+       div1.append(div2, div3, div4, div5, div8, div6, div7);
+
+       fragment.appendChild(div1);
+   });
+    PhoneTable.appendChild(fragment);
+}
+
 humburger.addEventListener('click', ()=>{
     sidebar.classList.toggle('hidden');
 });
@@ -19,7 +91,6 @@ const pendingButton = document.getElementById('pendingButton');
 
 function removeClasslist(el, classname){
     el.classList.remove(classname);
-    console.log('removed ' + classname + ' from ' + el)
 }
 
 function addClasslist(el, classname){
@@ -44,7 +115,7 @@ pendingButton.addEventListener('click', ()=>{
 });
 const pendingReqTable = document.getElementById('pendingReqTable');
 const tbody = document.createElement('tbody');
-const fragment = document.createDocumentFragment();
+
 
 const allReqs = [
     {
@@ -56,7 +127,9 @@ const allReqs = [
         names: '- -',
         time: '08:51',
 },
-
+{name: 'kakembo05', type: 'Withdraw', amount: '35,000', tel: '0758 325 876', names: 'Wasswa Robert', time: '11:45' },
+    {name: 'kakembo05', type: 'Withdraw', amount: '35,000', tel: '0758 325 876', names: 'Wasswa Robert', time: '11:45' },
+    {name: 'kakembo05', type: 'Withdraw', amount: '35,000', tel: '0758 325 876', names: 'Wasswa Robert', time: '11:45' },
 
 ];
 
@@ -134,7 +207,7 @@ function addRow(dataObj) {
     });
 
     tbody.appendChild(fragment);
-    pendingReqTable.appendChild(tbody);
+    pendingReqTable.appendChild(tbody);   
 }
 
 const allReqsBtn = document.getElementById('allReqs');
@@ -143,12 +216,15 @@ allReqsBtn.addEventListener('click', ()=>{
     depositsBtn.classList.remove('active-tab');
     allReqsBtn.classList.add('active-tab');
    tbody.textContent = '';
+    PhoneTable.textContent = '';
+    createMobileTable(allReqs);
     count = 0;
     addRow(allReqs);
 });
 
 allReqsBtn.classList.add('active-tab');
 addRow(allReqs);
+createMobileTable(allReqs);
 
 const withdrawBtn = document.getElementById('withdrawBtn');
 withdrawBtn.addEventListener('click', function () {
@@ -158,7 +234,8 @@ withdrawBtn.addEventListener('click', function () {
     count = 0;
     this.classList.add('active-tab');
     addRow(withdrawReqs);
-
+    PhoneTable.textContent = '';
+    createMobileTable(withdrawReqs);
 });
 
 const depositsBtn = document.getElementById('depositsBtn');
@@ -169,7 +246,10 @@ depositsBtn.addEventListener('click', function () {
     count = 0;
     this.classList.add('active-tab');
     addRow(depositReqs);
-})
+
+    PhoneTable.textContent = '';
+    createMobileTable(depositReqs);;
+});
 //pendingReqTable.textContent = 'No requests yet';
 
 
